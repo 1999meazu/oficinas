@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Oficina de empleo</title>
+</head>
+
+<body>
+    <header>
+        <h1>Buscador de Oficinas de Empleo</h1>
+    </header>
+    <nav class="filtro">
+        <div>
+            <form name="rellenar" action="#">
+                <div>
+                    <div>Isla</div>
+                    <input name="filtroisla" type="text" id="inputIsla" minlength="5">
+                </div>
+                <div>
+                    <div>Municipio</div>
+                    <input name="filtromunicipio" type="text" id="municipio" minlength="5">
+                </div>
+                <div class="botones">
+                    <div class="buscar"><input name="filtrado" type="button" id="buscar" value="Buscar" /></div>
+                    <div class="cancelar"><input name="cancelado" type="reset" value="Cancelar" /></div>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <main id="contenedor">
+    </main>
+    <footer>
+        <div>
+            <p>2º DAW (DEW)</p>
+        </div>
+        <div>
+            <img src="./imagenes/manrique.png">
+        </div>
+        <div>Daniel RD</div>
+    </footer>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+body{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "header " "filtro" "principal" "footer";
+  font-family:Turret Road;
+  margin: 0px;
+}
+  nav{
+    grid-area: filtro;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: white;
+
+  }
+  main{
+   grid-area: principal;
+   color: #2E2EFE;
+  }
+
+  header {
+    text-align: center;
+    background: #2E2EFE;
+    color: white;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: header;
+}
+footer {
+  background: #2E2EFE;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  color: white;
+  grid-area: footer;
+}
+#isla{
+  background-color: #e2e0e0;
+  padding: 10px;
+}
+#buscar{
+  background-color: #2E2EFE;
+  color: white;
+}
+.filtro input{
+  border-color: #2E2EFE;
+  border-radius: 5px;
+  color: #2E2EFE;
+}
+.filtro div{
+  color: #2E2EFE;
+}
+.cancelar{
+  margin-top: 10px;
+}
+#fichas{
+  display: grid;
+  grid-template-columns: 100%;
+
+}
+#fichas #ficha{
+  flex-basis: 100%;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow:0 0 40px -10px #000;
+  min-width: 300px;
+}
+input{
+  width: 100%;
+}
+input:invalid{
+  background: red;
+}
+form{
+  background:white;
+  font-family:'Montserrat',sans-serif;
+}
+.botones{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+hr,h1,h3{
+  margin: 0px;
+}
+hr{
+  border-top: 1px solid #2E2EFE;
+}
+
+/* -------------------------------------------------------------------------------------------TABLET---------------------------------------------------------------------*/
+@media (min-width: 600px) {
+  body{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 0fr;
+    grid-template-areas: "header " "filtro" "principal" "footer";
+    
+  }
+  #fichas{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  #fichas #ficha{
+    flex-basis: 100%;
+      background-color: white;
+      padding: 10px;
+      min-width: 300px;
+      margin-right: 10px;
+  }
+  nav{
+    grid-area: filtro;
+    padding: 10px;
+    background-color: white;
+  }
+  main{
+    grid-area: principal;
+  }
+}
+/* -------------------------------------------------------------------PANTALLA GRANDE----------------------------------------------------------------------------- */
+@media (min-width: 1000px) {
+  body{
+      display: grid;
+      grid-template-columns: 20% 80%;
+      margin: 0px;
+      grid-template-areas: "header header" "filtro principal"  "footer footer";
+      
+  }
+  nav{
+    grid-area: filtro;
+    padding: 10px;
+    background-color: white;
+  }
+  main{
+    grid-area: principal;
+  }
+  #fichas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+  }
+  #fichas #ficha{
+    flex-basis: 100%;
+      background-color: white;
+      padding: 10px;
+      max-width: 400px;
+  }
+}
