@@ -1,19 +1,26 @@
+*{
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+html{
+  overflow-x: hidden;
+  height: 100%;
+}
+
 body{
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-areas: "header " "filtro" "principal" "footer";
   font-family:Turret Road;
-  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #e2e0e0;
 }
   nav{
-    grid-area: filtro;
     padding: 10px;
-    margin-right: 10px;
     background-color: white;
-
+    box-shadow: 5px 5px 20px grey;
   }
   main{
-   grid-area: principal;
+    flex: 1;
    color: #2E2EFE;
   }
 
@@ -26,7 +33,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-area: header;
 }
 footer {
   background: #2E2EFE;
@@ -35,10 +41,8 @@ footer {
   align-items: center;
   height: 100px;
   color: white;
-  grid-area: footer;
 }
 #isla{
-  background-color: #e2e0e0;
   padding: 10px;
 }
 #buscar{
@@ -67,7 +71,7 @@ footer {
   background-color: white;
   padding: 10px;
   margin-bottom: 10px;
-  box-shadow:0 0 40px -10px #000;
+  box-shadow:0 0 20px -10px #000;
   min-width: 300px;
 }
 input{
@@ -90,62 +94,70 @@ hr,h1,h3{
 hr{
   border-top: 1px solid #2E2EFE;
 }
+.botones input{
+  margin-bottom: 10px;
+}
 
 /* -------------------------------------------------------------------------------------------TABLET---------------------------------------------------------------------*/
 @media (min-width: 600px) {
-  body{
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 0fr;
-    grid-template-areas: "header " "filtro" "principal" "footer";
-    
-  }
   #fichas{
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
+    flex-wrap: wrap;
   }
   #fichas #ficha{
-    flex-basis: 100%;
       background-color: white;
       padding: 10px;
       min-width: 300px;
       margin-right: 10px;
+      flex: 1;
   }
   nav{
-    grid-area: filtro;
     padding: 10px;
     background-color: white;
   }
-  main{
-    grid-area: principal;
-  }
+
+nav .botones{
+  display: flex;
+  flex-direction: row;
 }
+}
+
 /* -------------------------------------------------------------------PANTALLA GRANDE----------------------------------------------------------------------------- */
 @media (min-width: 1000px) {
   body{
-      display: grid;
-      grid-template-columns: 20% 80%;
-      margin: 0px;
-      grid-template-areas: "header header" "filtro principal"  "footer footer";
-      
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 100px auto 100px;
+    height: 100%;
   }
+  header{
+    grid-column: 1 / 3;
+    grid-row: 1/1;
+  }
+
   nav{
-    grid-area: filtro;
     padding: 10px;
     background-color: white;
+    grid-row: 2 /  span 2 ;
+    grid-column: 1/1;
   }
   main{
-    grid-area: principal;
+    grid-column: 2/2;
+    grid-row: 2/2;
   }
-  #fichas{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-  }
+
   #fichas #ficha{
-    flex-basis: 100%;
+      max-width: 400px;
       background-color: white;
       padding: 10px;
       max-width: 400px;
+  }
+  footer{
+    grid-row: 3/3;
+    grid-column: 1/3;
+  }
+  nav .botones{
+    display: flex;
+    flex-direction: column;
   }
 }
